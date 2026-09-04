@@ -10,7 +10,6 @@ import {
   Facebook,
   Instagram,
   MapPin,
-  Menu,
   Search,
   ShieldCheck,
   Sparkles,
@@ -19,10 +18,10 @@ import {
   Tag,
   TrendingUp,
   Users,
-  X,
   Youtube,
 } from "lucide-react";
 import { toast } from "sonner";
+import CinematicHero from "@/components/CinematicHero";
 
 const heroImage = "/manus-storage/localeadr-hero_1a29d95c.jpg";
 const discoveryImage = "/manus-storage/localeadr-discovery_edf432a8.jpg";
@@ -122,7 +121,6 @@ function scrollToId(id: string) {
 }
 
 export default function Home() {
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [submittedSearch, setSubmittedSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("All businesses");
@@ -164,30 +162,13 @@ export default function Home() {
         </div>
         <span className="rail-word">LOCALEADR</span>
         <div className="rail-line" />
-        <span className="rail-note">CITY INDEX<br />V.02 / 2026</span>
+        <span className="rail-note">LOCAL /<br />VERIFIED /<br />NOW</span>
+        <span className="rail-note rail-version">CITY INDEX<br />V.02 / 2026</span>
       </aside>
 
       <div className="site-main">
-        <header className="site-header">
-          <a className="brand-lockup" href="#top" onClick={() => scrollToId("top")} aria-label="Localeadr home">
-            <img src={brandMark} alt="" className="brand-mark" />
-            <span className="brand-name">localeadr</span>
-          </a>
-          <nav className={`primary-nav ${mobileNavOpen ? "is-open" : ""}`} aria-label="Primary navigation">
-            <a href="#featured" onClick={() => setMobileNavOpen(false)}>Directory</a>
-            <a href="#marketplace" onClick={() => setMobileNavOpen(false)}>Marketplace</a>
-            <a href="#insights" onClick={() => setMobileNavOpen(false)}>Insights</a>
-            <a href="#about" onClick={() => setMobileNavOpen(false)}>About</a>
-          </nav>
-          <div className="header-actions">
-            <button className="text-button login-button" onClick={() => showComingSoon("Login")}>Log in <ArrowUpRight size={15} /></button>
-            <button className="menu-button" aria-label={mobileNavOpen ? "Close menu" : "Open menu"} onClick={() => setMobileNavOpen((open) => !open)}>
-              {mobileNavOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
-          </div>
-        </header>
-
         <main id="top">
+          <CinematicHero />
           <section className="hero-section">
             <div className="hero-copy">
               <div className="eyebrow"><span className="eyebrow-dot" /> The City Experience / 01</div>
